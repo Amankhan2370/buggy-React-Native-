@@ -1,3 +1,7 @@
+const sortUsersByScore = (users) => {
+  return [...users].sort((a, b) => b.score - a.score);
+};
+
 Explanation of Fixes;
 1. Refactored Sorting Logic:
 What was done: A separate function called sortUsersByScore was created to handle sorting the users by their scores in descending order.
@@ -8,3 +12,5 @@ Why it's important: React works best when you don’t change (or "mutate") the o
 3. Updated State with Sorted Array: 
 What was done: After sorting the copied array, the users state was updated with the newly sorted array.
 Why it matters: React’s setState (or equivalent) is designed to take a new version of the state and re-render the UI accordingly. By providing the sorted array as the new state, React knows what’s different and updates the UI correctly. This avoids breaking React's rules about managing state.
+
+
